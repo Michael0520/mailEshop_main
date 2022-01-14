@@ -80,7 +80,7 @@
   </section>
 
   <section>
-    <div class="card">
+    <!-- <div class="card">
       <div class="card-top">
         <div class="card-top-image">
           <img src="../assets/mainBanner01.png" alt="卡片圖片" />
@@ -119,26 +119,40 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="card">
+    </div>-->
+    <div class="card" v-for="(item, index) in cardList" :key="index">
+      <!-- <div class="index">第 {{ index + 1 }} 筆資料</div> -->
+      <!-- <div class="index">{{ item.img }}</div> -->
       <div class="card-top">
         <div class="card-top-image">
-          <img src="../assets/mainBanner01.png" alt="卡片圖片" />
+          <img :src="require(`@/assets/${item.name}.png`)" alt="卡片圖片" />
         </div>
         <div class="card-top-title">
-          <h3>如何找到優質、熱心的商品？</h3>
+          <h3>{{ item.topcardTitle }}</h3>
         </div>
       </div>
       <div class="card-bottom">
-        <div class="card-bottom-title">
-          <p>
-            賣Eshop 嚴格把關上百件商品，只為提供您找到最好賣的時
-            <br />下夯品！
-          </p>
+        <div class="card-bottom-content">
+          <div class="card-bottom-title">
+            <p>{{ item.bottomcardTitle }}</p>
+          </div>
+          <div class="card-bottom-listTitle">
+            <div
+              class="card-bottom-listTitle-content"
+              v-for="(innerItem, index) in item.bottomcardList"
+              :key="index"
+            >
+              <p>{{ innerItem }}</p>
+              <span class="material-icons-outlined">task_alt</span>
+            </div>
+          </div>
         </div>
+
         <div class="card-bottom-image">
-          <div class="card-top-image">
-            <img src="../assets/mainBanner01.png" alt="卡片圖片" />
+          <img src="../assets/mainBanner01.png" alt="卡片圖片" />
+          <div class="card-bottom-image-title">
+            <p class="text-pink">{{ item.bottomcardMemberTitle }}</p>
+            <p class="text-pink">{{ item.bottomcardMember }}</p>
           </div>
         </div>
       </div>
@@ -146,6 +160,64 @@
   </section>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      cardList: [
+        {
+          "id": 1,
+          "topcardTitle": "如何找到優質、熱銷的產品",
+          "bottomcardTitle": "賣Eshop 嚴格把關上百件商品，只為提供您找到最好賣的時下夯品！",
+          "bottomcardList": ["擁有熱銷團購商品列表", "各產業優質貨源：食品、家電、生活、旅遊、美妝"],
+          "bottomcardMemberTitle": "賣Eshop",
+          "bottomcardMember": "小助理",
+          "name": "cardImage"
+        },
+        {
+          "id": 2,
+          "topcardTitle": "如何找到優質、熱銷的產品",
+          "bottomcardTitle": "賣Eshop 嚴格把關上百件商品，只為提供您找到最好賣的時下夯品！",
+          "bottomcardList": ["擁有熱銷團購商品列表", "各產業優質貨源：食品、家電、生活、旅遊、美妝"],
+          "bottomcardMemberTitle": "賣Eshop",
+          "bottomcardMember": "小助理",
+          "name": "mainBanner01"
+        },
+        {
+          "id": 3,
+          "topcardTitle": "如何找到優質、熱銷的產品",
+          "bottomcardTitle": "賣Eshop 嚴格把關上百件商品，只為提供您找到最好賣的時下夯品！",
+          "bottomcardList": ["擁有熱銷團購商品列表", "各產業優質貨源：食品、家電、生活、旅遊、美妝"],
+          "bottomcardMemberTitle": "賣Eshop",
+          "bottomcardMember": "小助理",
+          "name": "cardImage"
+
+        },
+        {
+          "id": 4,
+          "topcardTitle": "如何找到優質、熱銷的產品",
+          "bottomcardTitle": "賣Eshop 嚴格把關上百件商品，只為提供您找到最好賣的時下夯品！",
+          "bottomcardList": ["擁有熱銷團購商品列表", "各產業優質貨源：食品、家電、生活、旅遊、美妝"],
+          "bottomcardMemberTitle": "賣Eshop",
+          "bottomcardMember": "小助理",
+          "name": "cardImage"
+
+        },
+
+      ]
+    }
+  },
+  methods: {
+    backgroundStyles(image) {
+      return {
+        // any other styles you might need to add on as an example
+        "background-image": `url(${image})`,
+        // "src": `url(${image})`,
+      };
+    },
+  },
+}
+</script>
 
 <style lang="scss" scoped>
 header {
@@ -301,9 +373,10 @@ main {
   margin-top: 130px;
   font-size: 38px;
   font-weight: 500;
+  margin-bottom: 120px;
   .card-top {
     display: flex;
-    margin-bottom: 160px;
+    margin-bottom: 110px;
     .card-top-image {
       display: flex;
       justify-content: center;
@@ -313,7 +386,7 @@ main {
       left: 20px;
       img {
         width: 215px;
-        height: 250px;
+        height: 280px;
         background-size: cover;
       }
     }
@@ -385,16 +458,18 @@ main {
       flex-direction: column;
       justify-content: center;
       position: relative;
-      bottom: 33px;
+      top: 33px;
       right: 20px;
       img {
         width: 215px;
-        height: 250px;
+        height: 280px;
         background-size: cover;
       }
       .card-bottom-image-title {
+        padding-left: 34px;
         font-size: 32px;
         line-height: 39px;
+        text-align: left;
       }
     }
   }
@@ -404,3 +479,5 @@ main {
   color: #fc0a52;
 }
 </style>
+
+
