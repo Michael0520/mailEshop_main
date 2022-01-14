@@ -158,6 +158,83 @@
       </div>
     </div>
   </section>
+  <!-- feedback -->
+  <section>
+    <div class="feedback-section">
+      <div class="feedback-title">
+        <h2>好評推薦</h2>
+        <p>
+          來自合作夥伴們的
+          <span class="text-pink">真實回饋</span>
+        </p>
+      </div>
+      <div class="feedback-cardSection">
+        <div class="feedback-card">
+          <div class="feedback-content">
+            <div class="feedback-card-title">
+              <p class="text-pink">大樓福委</p>
+            </div>
+            <div class="feedback-card-text">
+              <p>每週都會上新品很接時節，有很多商品可以選擇，商品分類完善，而且可以讓團員自己收貨很方便。團可以不需要承擔囤貨的風險。</p>
+            </div>
+          </div>
+          <div class="feedback-member">
+            <div class="feedback-member-image">
+              <img src alt />
+            </div>
+            <div class="feedback-member-title">
+              <p>Jmebaby's mall</p>
+            </div>
+          </div>
+        </div>
+        <div class="feedback-card">
+          <div class="feedback-content">
+            <div class="feedback-card-title">
+              <p class="text-pink">大樓福委</p>
+            </div>
+            <div class="feedback-card-text">
+              <p>每週都會上新品很接時節，有很多商品可以選擇，商品分類完善，而且可以讓團員自己收貨很方便。團可以不需要承擔囤貨的風險。</p>
+            </div>
+          </div>
+          <div class="feedback-member">
+            <div class="feedback-member-image">
+              <img src alt />
+            </div>
+            <div class="feedback-member-title">
+              <p>Jmebaby's mall</p>
+            </div>
+          </div>
+        </div>
+        <div class="feedback-card">
+          <div class="feedback-content">
+            <div class="feedback-card-title">
+              <p class="text-pink">大樓福委</p>
+            </div>
+            <div class="feedback-card-text">
+              <p>每週都會上新品很接時節，有很多商品可以選擇，商品分類完善，而且可以讓團員自己收貨很方便。團可以不需要承擔囤貨的風險。</p>
+            </div>
+          </div>
+          <div class="feedback-member">
+            <div class="feedback-member-image">
+              <img src alt />
+            </div>
+            <div class="feedback-member-title">
+              <p>Jmebaby's mall</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- more-section -->
+  <section>
+    <div class="more-section">
+      <p>立即體驗</p>
+      <h2>簡單邁出下一個熱銷產品</h2>
+      <button>開始賣一下</button>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -474,7 +551,101 @@ main {
     }
   }
 }
+.feedback-section {
+  height: 760px;
+  background-color: #e4e8e9;
+  padding: 96px 64px;
+  .feedback-title {
+    padding: 98px 0;
+    h2 {
+      font-size: 52px;
+      padding-bottom: 23px;
+    }
+    p {
+      font-size: 36px;
+    }
+  }
+  .feedback-cardSection {
+    display: flex;
+    font-size: 32px;
+    font-weight: bold;
 
+    .feedback-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      max-width: 700px;
+      width: 100%;
+      height: 400px;
+      padding: 35px 50px;
+      margin-right: 35px;
+      background-color: #fff;
+      border-radius: 30px;
+      .feedback-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        .feedback-card-title {
+          p {
+            margin-bottom: 30px;
+          }
+        }
+        .feedback-card-text {
+          p {
+            text-align: left;
+            line-height: 44px;
+          }
+        }
+      }
+      .feedback-member {
+        display: flex;
+        align-items: center;
+
+        .feedback-member-image {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          background-color: #aaa;
+          margin-right: 18px;
+          img {
+          }
+        }
+        .feedback-member-title {
+          p {
+          }
+        }
+      }
+    }
+  }
+}
+.more-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 450px;
+  color: #fff;
+  font-weight: bold;
+  background-color: #fc930a;
+  p {
+    font-size: 40px;
+    padding-bottom: 28px;
+  }
+  h2 {
+    font-size: 60px;
+    padding-bottom: 56px;
+  }
+  button {
+    width: 260px;
+    font-size: 32px;
+    background-color: #fff;
+    color: #fc930a;
+    border-radius: 80px;
+    border: 0;
+    padding: 20px 50px;
+  }
+}
 .text-pink {
   color: #fc0a52;
 }
