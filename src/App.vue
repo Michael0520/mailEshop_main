@@ -4,6 +4,8 @@
     <router-link to="/about">About</router-link>
   </div>-->
   <router-view />
+
+  <h1>test 123</h1>
 </template>
 
 <style lang="scss">
